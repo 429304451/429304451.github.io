@@ -69,19 +69,25 @@ cc.game.onStart = function(){
 
     // Adjust viewport meta
     cc.view.adjustViewPort(true);
-
-    // Uncomment the following line to set a fixed orientation for your game
-    // cc.view.setOrientation(cc.ORIENTATION_PORTRAIT);
-
     // Setup the resolution policy and design resolution size
-    cc.view.setDesignResolutionSize(960, 640, cc.ResolutionPolicy.SHOW_ALL);
-
+    cc.view.setDesignResolutionSize(1280, 720, cc.ResolutionPolicy.FIXED_WIDTH);
     // The game will be resized when browser size change
     cc.view.resizeWithBrowserSize(true);
-
     //load resources
-    cc.LoaderScene.preload(g_resources, function () {
-        cc.director.runScene(new HelloWorldScene());
-    }, this);
+    // cc.LoaderScene.preload(g_resources, function () {
+    //     cc.director.runScene(new HelloWorldScene());
+    // }, this);
+    // 预加载要运行的js文件
+    cc.loader.loadJs("src/jsList.js", function() {
+        cc.loader.loadJs(jsListFramework.concat(jsListGame), function() {
+            // 预加载资源
+            cc.LoaderScene.preload(g_resources, function () {
+                // cc.director.runScene(new HelloWorldScene());
+                cc.director.runScene(new MEnter(10002, false));
+            }, this);
+        });
+    });
+
+
 };
 cc.game.run();

@@ -4,15 +4,14 @@
     "debugMode" : 1,
     "showFPS" : true,
     "frameRate" : 60,
-    "noCache" : false,
+    "noCache" : true,
     "id" : "gameCanvas",
     "renderMode" : 0,
     "engineDir":"frameworks/cocos2d-html5",
 
-    "modules" : ["cocos2d"],
+    "modules" : ["cocos2d", "gui", "cocostudio", "editbox", "socketio", "extensions", "external"],
 
     "jsList" : [
-        "src/resource.js",
-        "src/app.js"
+        "src/jsList.js"
     ]
 }
