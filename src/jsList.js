@@ -15,7 +15,11 @@ var jsListGame = [
     "src/resource.js",
     "src/app.js",
 
-    "src/Shaders/10002WenYu.js"
+    "src/Shaders/10002WenYu.js",
+
+    "src/Shaders/ShaderCommon.js",
+    "src/Imagination/10003BranchGrowth.js",
+
 ];
 
 if (typeof module != "undefined") {

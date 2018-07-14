@@ -25,7 +25,7 @@ var V = {
 };
 // 全屏适配 只考虑 1.2-2.2范围之间
 var _gm = {}
-_gm.bgScaleH = WIN_Height/V.h;
+_gm.bgScaleH = WIN_Height/ScreenContentSize.height;
 
 var SceneInCare = {}
 SceneInCare[10000] = ["HelloWorldScene", "Hey 哈喽-我是你的第一个场景 HelloWorld"] // 第一个场景 helloWorld

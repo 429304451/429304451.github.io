@@ -82,8 +82,8 @@ cc.game.onStart = function(){
         cc.loader.loadJs(jsListFramework.concat(jsListGame), function() {
             // 预加载资源
             cc.LoaderScene.preload(g_resources, function () {
-                // cc.director.runScene(new HelloWorldScene());
-                cc.director.runScene(new MEnter(10002, false));
+                cc.director.runScene(new BranchGrowth());
+                // cc.director.runScene(new MEnter(10003, false));
             }, this);
         });
     });

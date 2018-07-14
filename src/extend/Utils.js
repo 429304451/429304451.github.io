@@ -18,6 +18,10 @@ Utils.calcInLineSide = function (x1, y1, x2, y2, x, y) {
     return value
 };
 
+Utils.rad = function (angle) {
+    return angle * (Math.PI/180)
+}
+
 //dump
 Utils.dump = function (obj, deep, hash) {
 
@@ -471,7 +475,7 @@ Utils.rand = function (st, ed) {
         st = 0;
     }
 
-    return Math.floor(Math.random() * (ed - st) + st);
+    return Math.round(Math.random() * (ed - st) + st);
 };
 
 
@@ -772,3 +776,4 @@ Utils.randNum = function(min, max, isInt){
 if (typeof module != "undefined") {
     module.exports = Utils;
 }
+

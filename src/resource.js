@@ -11,10 +11,16 @@ var res = {
     wen3: "res/img2/gpu/Shaders/wenYu.vsh",
     wen4: "res/img2/gpu/frozen.png",
     wen5: "res/audio/kaka.mp3",
+
+    gpu1: "res/img2/gpu/Shaders/default.fsh",
+    gpu2: "res/img2/gpu/Shaders/default.vsh",
+
+    heart1: "res/img2/gpu/Shaders/example_Heart.fsh",
+    heart2: "res/img2/gpu/Shaders/example_Heart.vsh",
+
+    tree1: "res/img2/gameplay/magicball3.png",
+    s_fire: "res/img2/gameplay/fire.png",
 };
-
-
-
 
 var g_resources = [];
 for (var i in res) {
@@ -23,3 +29,5 @@ for (var i in res) {
 for (var i in cRes) {
     g_resources.push(cRes[i]);
 }
+
+
