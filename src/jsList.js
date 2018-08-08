@@ -20,6 +20,8 @@ var jsListGame = [
     "src/Shaders/ShaderCommon.js",
     "src/Imagination/10003BranchGrowth.js",
 
+    "src/MainScene/try1.js",
+
 ];
 
 if (typeof module != "undefined") {
