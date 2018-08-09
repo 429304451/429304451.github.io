@@ -32,5 +32,6 @@ var SceneInCare = {};
 SceneInCare[10000] = ["HelloWorldScene", "Hey 哈喽-我是你的第一个场景"]; // 第一个场景 helloWorld
 SceneInCare[10001] = ["Wenyu",           "文煜的多页选框选择效果"];
 SceneInCare[10002] = ["Try1_Scene",      "测试模板1"];
+SceneInCare[10003] = ["noiseCloudScene", "噪音图片制造云层效果"];
 
 

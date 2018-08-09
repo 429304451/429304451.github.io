@@ -30,6 +30,13 @@ var res = {
     bomb_red: "res/img2/puchengBomb/btn/red.png",
     bomb_tuichu: "res/img2/puchengBomb/btn/tuichu.png",
     bomb_liebiao: "res/img2/puchengBomb/btn/liebiao.png",
+    // noiseCloud
+    gpu_noiseCloud1: "res/img2/gpu/Shaders/noiseCloud.fsh",
+    gpu_noiseCloud2: "res/img2/gpu/Shaders/noiseCloud.vsh",
+
+    noise_256: "res/img2/gpu/noise_256.png",
+    noise_512: "res/img2/gpu/noise_512.png",
+    noise_1024: "res/img2/gpu/noise_1024.png",
 };
 
 var g_resources = [];
