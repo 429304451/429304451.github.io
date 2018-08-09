@@ -89,6 +89,11 @@ var hall_Layer = cc.Layer.extend({
 var hall_Scene = cc.Scene.extend({
     onEnter:function () {
         this._super();
+        // if (isChangweiTest) {
+        //     cc.director.runScene(new hall_Scene());
+        //     return;
+        // };
+
         var layer = new hall_Layer();
         this.addChild(layer);
 

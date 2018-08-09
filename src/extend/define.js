@@ -1,4 +1,4 @@
-var isChangweiTest = true
+var isChangweiTest = false
 //设计分辨率
 var ScreenContentSize = {
 	width: 1280,
