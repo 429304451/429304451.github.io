@@ -38,6 +38,14 @@ cc.Node.prototype.getSceneOrLayerInParent = function() {
 	return null;
 };
 
+cc.Node.prototype.fullScreen = function(father, zorder, tag) {
+	var winSize = cc.director.getWinSize();
+	var size = this.getContentSize();
+	this.setScaleX(winSize.width/size.width);
+	this.setScaleY(winSize.height/size.height);
+	return this;
+};
+
 cc.Node.prototype.to = function(father, zorder, tag) {
 	zorder = zorder || 0;
 	if (tag != null) {
@@ -329,13 +337,14 @@ cc.Node.prototype.bindTouchLocate = function() {
 };
 
 // 快速绑定点击函数 touchSilence-是否静默点击 Shield-是否有点击cdTime
-cc.Node.prototype.quickBt = function(fn, touchSilence, Shield) {
+cc.Node.prototype.quickBt = function(fn, touchSilence, Shield, noSwallow) {
 	var self = this;
 	this.lastClickTime = 0;
 	this.cdTime = 300 // 毫秒
 
+
 	this.bindTouch({
-		swallowTouches: true,
+		swallowTouches: !noSwallow,
 		onTouchBegan: function(touch, event) {
             if (self._touchEnabled == false || this.isVisible() == false || this.getParent().isVisible() == false)
 				return false;
@@ -391,4 +400,56 @@ cc.Node.prototype.delayCall = function(func, delayTime, bRepeat) {
 		}
 	};
 	this.runAction(action);
+};
+
+
+ccui.Widget.prototype.clickBt = function(callFunc, touchSilence, Shield) {
+	var clickCdTime = 0.3 // 点击公共CD
+	var lastClickTime = 0 // 上次点击时间
+
+	var oldScale = this.getScale();
+    var clickScale = oldScale*0.9;
+    var oldOpacity = this.getOpacity();
+    var clickOpacity = oldOpacity*0.9;
+    this.setTouchEnabled(true);
+
+    this.addTouchEventListener(function (sender, type) {
+    	switch (type) {
+            case ccui.Widget.TOUCH_BEGAN:
+                if (!touchSilence) {
+                	this.setScale(clickScale);
+                	this.setOpacity(clickOpacity);
+                }
+                break;
+            case ccui.Widget.TOUCH_MOVED:
+                break;
+            case ccui.Widget.TOUCH_ENDED:
+                if (!touchSilence) {
+		            this.setScale(oldScale);
+		            this.setOpacity(oldOpacity);
+		            Sound.playEffect(cRes.btnClick);
+		        };
+		        if (!Shield) {
+		        	var now = (new Date()).getTime();
+		        	if (now - lastClickTime < clickCdTime) {
+						console.log("---屏蔽过快点击---");
+						return
+					};
+					lastClickTime = now;
+		        }
+
+	            callFunc && callFunc();
+                break;
+            case ccui.Widget.TOUCH_CANCELED:
+                if (!touchSilence) {
+		            this.setScale(oldScale);
+		            this.setOpacity(oldOpacity);
+		            Sound.playEffect(cRes.btnClick);
+		        };
+                break;
+            default:
+                break;
+        }
+
+    }, this);
 };

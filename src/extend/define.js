@@ -1,3 +1,4 @@
+var isChangweiTest = true
 //设计分辨率
 var ScreenContentSize = {
 	width: 1280,
@@ -27,9 +28,9 @@ var V = {
 var _gm = {}
 _gm.bgScaleH = WIN_Height/ScreenContentSize.height;
 
-var SceneInCare = {}
-SceneInCare[10000] = ["HelloWorldScene", "Hey 哈喽-我是你的第一个场景 HelloWorld"] // 第一个场景 helloWorld
-SceneInCare[10002] = ["Wenyu", "文煜的多页选框选择效果"]
-
+var SceneInCare = {};
+SceneInCare[10000] = ["HelloWorldScene", "Hey 哈喽-我是你的第一个场景"]; // 第一个场景 helloWorld
+SceneInCare[10001] = ["Wenyu",           "文煜的多页选框选择效果"];
+SceneInCare[10002] = ["Try1_Scene",      "测试模板1"];
 
 

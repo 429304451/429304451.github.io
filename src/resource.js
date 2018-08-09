@@ -20,6 +20,16 @@ var res = {
 
     tree1: "res/img2/gameplay/magicball3.png",
     s_fire: "res/img2/gameplay/fire.png",
+    // cocosui
+    cocosui_green_edit: "res/img2/cocosui/green_edit.png",
+    cocosui_scrollviewbg: "res/img2/cocosui/scrollviewbg.png",
+    // bomb
+    bomb_anniu1: "res/img2/puchengBomb/btn/anniu1.png",
+    bomb_green: "res/img2/puchengBomb/btn/green.png",
+    bomb_lan: "res/img2/puchengBomb/btn/lan.png",
+    bomb_red: "res/img2/puchengBomb/btn/red.png",
+    bomb_tuichu: "res/img2/puchengBomb/btn/tuichu.png",
+    bomb_liebiao: "res/img2/puchengBomb/btn/liebiao.png",
 };
 
 var g_resources = [];
