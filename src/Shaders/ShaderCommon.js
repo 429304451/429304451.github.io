@@ -1,6 +1,6 @@
 
 var ShaderSprite = cc.Sprite.extend({
-    ctor: function (filename, fsh = res.gpu1, vsh = res.gpu2) {
+    ctor:function (filename, fsh = res.gpu1, vsh = res.gpu2) {
         this._super(filename);
 
         if( 'opengl' in cc.sys.capabilities ) {
@@ -30,15 +30,15 @@ var ShaderSprite = cc.Sprite.extend({
                 this.shaderProgram = this.shader;
             }
         }
-    }
+    },
 });
 
 cc.GLNode = cc.GLNode || cc.Node.extend({
-    ctor:function(){
+    ctor:function () {
         this._super();
         this.init();
     },
-    init:function(){
+    init:function () {
         this._renderCmd._needDraw = true;
         this._renderCmd._matrix = new cc.math.Matrix4();
         this._renderCmd._matrix.identity();
@@ -60,13 +60,13 @@ cc.GLNode = cc.GLNode || cc.Node.extend({
             cc.kmGLPopMatrix();
         };
     },
-    draw:function(ctx){
+    draw:function (ctx) {
         this._super(ctx);
     }
 });
 
 var ShaderNode = cc.GLNode.extend({
-    ctor:function(vertexShader, framentShader) {
+    ctor:function (vertexShader, framentShader) {
         this._super();
         this.init();
         this.width = V.w;
@@ -90,7 +90,7 @@ var ShaderNode = cc.GLNode.extend({
             this._time = 0;
         }
     },
-    draw:function() {
+    draw:function () {
         // console.log("draw");
         this.shader.use();
         this.shader.setUniformsForBuiltins();
@@ -120,10 +120,10 @@ var ShaderNode = cc.GLNode.extend({
         gl.bindBuffer(gl.ARRAY_BUFFER, null);
     },
 
-    update:function(dt) {
+    update:function (dt) {
         this._time += dt;
     },
-    initBuffers:function() {
+    initBuffers:function () {
         // Square
         var squareVertexPositionBuffer = this.squareVertexPositionBuffer = gl.createBuffer();
         gl.bindBuffer(gl.ARRAY_BUFFER, squareVertexPositionBuffer);
@@ -141,13 +141,13 @@ var ShaderNode = cc.GLNode.extend({
 // shader 测试专用测试场景
 var ShaderCommon = cc.Scene.extend({
 
-    ctor: function () {
+    ctor:function () {
         this._super();
         
         // 测试使用
     },
 
-    onEnter: function () {
+    onEnter:function () {
         this._super();
         var node = new cc.LabelTTF("ShaderCommon", "Arial", 26).to(this, 99).p(V.w/2, V.h-40);
         // this.bag = new ShaderSprite("res/common/frozen.png").to(this).p(V.w/2, V.h/2);

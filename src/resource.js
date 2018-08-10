@@ -23,6 +23,13 @@ var res = {
     // cocosui
     cocosui_green_edit: "res/img2/cocosui/green_edit.png",
     cocosui_scrollviewbg: "res/img2/cocosui/scrollviewbg.png",
+    cocosui_b1: "res/img2/cocosui/UITest/b1.png",
+    cocosui_f1: "res/img2/cocosui/UITest/f1.png",
+    cocosui_b1: "res/img2/cocosui/UITest/b1.png",
+    cocosui_sliderProgress: "res/img2/cocosui/sliderProgress.png",
+    cocosui_sliderTrack: "res/img2/cocosui/sliderTrack.png",
+    cocosui_sliderThumb: "res/img2/cocosui/sliderThumb.png",
+
     // bomb
     bomb_anniu1: "res/img2/puchengBomb/btn/anniu1.png",
     bomb_green: "res/img2/puchengBomb/btn/green.png",
@@ -37,6 +44,16 @@ var res = {
     noise_256: "res/img2/gpu/noise_256.png",
     noise_512: "res/img2/gpu/noise_512.png",
     noise_1024: "res/img2/gpu/noise_1024.png",
+    // simple
+    gpu_simple1: "res/img2/gpu/simple/simple1.fsh",
+    gpu_simple2: "res/img2/gpu/simple/simple2.fsh",
+    gpu_simple3: "res/img2/gpu/simple/simple3.fsh",
+    gpu_bin1: "res/img2/gpu/bin/bin1.fsh",
+    // gp
+    gp_grossini: "res/img2/gpu/grossini.png",
+
+
+
 };
 
 var g_resources = [];

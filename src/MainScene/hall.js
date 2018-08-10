@@ -97,8 +97,8 @@ var hall_Scene = cc.Scene.extend({
         var layer = new hall_Layer();
         this.addChild(layer);
 
-        var layer2 = new backHallLayer();
-        this.addChild(layer2);
+        // var layer2 = new backHallLayer();
+        // this.addChild(layer2);
     }
 });
 

@@ -1,7 +1,7 @@
 
 
 var ShaderNoiseCloud = cc.Sprite.extend({
-    ctor: function (filename, fsh = res.gpu_noiseCloud1, vsh = res.gpu_noiseCloud2) {
+    ctor: function (filename, fsh = res.gpu_simple1, vsh = res.gpu_simple2) {
         this._super(filename);
 
         if( 'opengl' in cc.sys.capabilities ) {
@@ -32,7 +32,7 @@ var ShaderNoiseCloud = cc.Sprite.extend({
 
                 var alphaTexture = cc.textureCache.addImage(res.noise_512);
                 // var glProgramState = cc.GLProgramState.getOrCreateWithGLProgram(shader);
-                this.shader.setUniformTexture("u_alphaTexture", alphaTexture);
+                // this.shader.setUniformTexture("u_alphaTexture", alphaTexture);
                 // sprite.setGLProgramState(glProgramState);
 
                 // this._state.setUniformTexture("caustics", shining_texture);

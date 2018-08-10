@@ -16,9 +16,12 @@ var jsListGame = [
     "src/app.js",
 
     "src/MainScene/hall.js", // 大厅入口
+
     "src/Shaders/10002WenYu.js",
     "src/Shaders/ShaderCommon.js",
     "src/Shaders/noiseCloud.js",
+    "src/Shaders/simpleShader.js",
+    "src/Shaders/binShader.js",
 
     "src/Imagination/10003BranchGrowth.js",
 

@@ -32,6 +32,6 @@ var SceneInCare = {};
 SceneInCare[10000] = ["HelloWorldScene", "Hey 哈喽-我是你的第一个场景"]; // 第一个场景 helloWorld
 SceneInCare[10001] = ["Wenyu",           "文煜的多页选框选择效果"];
 SceneInCare[10002] = ["Try1_Scene",      "测试模板1"];
-SceneInCare[10003] = ["noiseCloudScene", "噪音图片制造云层效果"];
-
-
+// SceneInCare[10003] = ["noiseCloudScene", "噪音图片制造云层效果"]; binShaderScene
+SceneInCare[10003] = ["simpleShaderScene", "简单的Shader改变效果"];
+SceneInCare[10004] = ["binShaderScene",  "Shader带四个可变变量效果"];
