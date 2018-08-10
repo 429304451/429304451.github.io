@@ -14,6 +14,7 @@ var res = {
 
     gpu1: "res/img2/gpu/Shaders/default.fsh",
     gpu2: "res/img2/gpu/Shaders/default.vsh",
+    gpu_wo: "res/img2/gpu/wo.png",
 
     heart1: "res/img2/gpu/Shaders/example_Heart.fsh",
     heart2: "res/img2/gpu/Shaders/example_Heart.vsh",
@@ -25,7 +26,7 @@ var res = {
     cocosui_scrollviewbg: "res/img2/cocosui/scrollviewbg.png",
     cocosui_b1: "res/img2/cocosui/UITest/b1.png",
     cocosui_f1: "res/img2/cocosui/UITest/f1.png",
-    cocosui_b1: "res/img2/cocosui/UITest/b1.png",
+    cocosui_r1: "res/img2/cocosui/UITest/r1.png",
     cocosui_sliderProgress: "res/img2/cocosui/sliderProgress.png",
     cocosui_sliderTrack: "res/img2/cocosui/sliderTrack.png",
     cocosui_sliderThumb: "res/img2/cocosui/sliderThumb.png",
@@ -49,6 +50,7 @@ var res = {
     gpu_simple2: "res/img2/gpu/simple/simple2.fsh",
     gpu_simple3: "res/img2/gpu/simple/simple3.fsh",
     gpu_bin1: "res/img2/gpu/bin/bin1.fsh",
+    gpu_bin2: "res/img2/gpu/bin/bin2.fsh",
     // gp
     gp_grossini: "res/img2/gpu/grossini.png",
 

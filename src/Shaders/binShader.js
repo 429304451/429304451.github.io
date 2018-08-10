@@ -1,13 +1,13 @@
+var binSpList = [res.wen4, res.gpu_wo];
 var binList = [
     // fsh vsh 描述
     [res.gpu_bin1, res.gpu2, "水坑"],
-    
+    [res.gpu_bin2, res.gpu2, "人物发光"],
 ];
 
 var binShaderSprite = cc.Sprite.extend({
     ctor:function (filename, fsh = res.gpu1, vsh = res.gpu2, parent) {
         this._super(filename);
-        this.mParent = parent;
 
         if( 'opengl' in cc.sys.capabilities ) {
             if(cc.sys.isNative){
@@ -25,14 +25,14 @@ var binShaderSprite = cc.Sprite.extend({
                 this.shader.updateUniforms();
                 this.shader.use();
 
-                this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('slider1'), 0.5);
-                this.shader.setUniformLocationWith3f(this.shader.getUniformLocationForName('binColor'), 0.5, 0.5, 0.5);
+                this.shader.setUniformLocationWith1f(this.shader.getUniformLocationForName('slider1'), parent.slider1Value);
+                this.shader.setUniformLocationWith3f(this.shader.getUniformLocationForName('binColor'), parent.posX, parent.posY, parent.slider2Value);
             }
             if(cc.sys.isNative){
                 var glProgram_state = cc.GLProgramState.getOrCreateWithGLProgram(this.shader);
 
-                glProgram_state.setUniformFloat("slider1", 1.75);
-                glProgram_state.setUniformVec3("binColor", {x: 0.5, y: 0.5, z: 0.5});
+                glProgram_state.setUniformFloat("slider1", parent.slider1Value);
+                glProgram_state.setUniformVec3("binColor", {x: parent.posX, y: parent.posY, z: parent.slider2Value});
 
                 this.setGLProgramState(glProgram_state);
             }else{
@@ -71,7 +71,7 @@ var binShaderLayer = cc.Layer.extend({
         this.addY = 50;
 
         var self = this;
-        this.nowIndex = 0;
+        this.nowIndex = 1;
         this.upLimit  = binList.length - 1;
         // 添加背景图
         this.bg = new cc.Sprite(cRes.bg1).to(this).pp();
@@ -80,21 +80,34 @@ var binShaderLayer = cc.Layer.extend({
         this.pic1 = new cc.Sprite(res.wen4).to(this).p(V.w/4, V.h/2+this.addY);
         this.pic1.setScale(0.5);
         // 右边为变化后的图片
-        this.pic2 = new binShaderSprite(res.wen4, binList[this.nowIndex][0], binList[this.nowIndex][1]).to(this).p(V.w*3/4, V.h/2+this.addY);
+        this.pic2 = new binShaderSprite(binSpList[1], binList[this.nowIndex][0], binList[this.nowIndex][1], this).to(this).p(V.w*3/4, V.h/2+this.addY);
         this.pic2.setScale(0.5);
         // 简单的描述
-        this.desc = new cc.LabelTTF((this.nowIndex+1)+" : "+binList[this.nowIndex][2], "宋体", 25).to(this).p(V.w/2, 130);
+        this.desc = new cc.LabelTTF((this.nowIndex+1)+" : "+binList[this.nowIndex][2], "宋体", 25).to(this).p(V.w/2, 220).bindTouchLocate();
         this.addSlider();
         // MAddSlider(this, 1)
         // 左右按钮
         this.btn_left  = new cc.Sprite(res.cocosui_b1).to(this).p(460, 100);
-        // this.btn_left.quickBt(function () {
-        //     self.changIndex(1);
-        // });
+        this.btn_left.quickBt(function () {
+            self.changIndex(1);
+        });
         this.btn_right = new cc.Sprite(res.cocosui_f1).to(this).p(V.w-460, 100);
-        // this.btn_right.quickBt(function () {
-        //     self.changIndex(-1);
-        // });
+        this.btn_right.quickBt(function () {
+            self.changIndex(-1);
+        });
+        this.btn_mid = new cc.Sprite(res.cocosui_r1).to(this).p(V.w/2, 100);
+        this.spIndex = 0;
+        this.btn_mid.quickBt(function () {
+            self.spIndex = self.spIndex + 1;
+            if (self.spIndex < 0) {
+                self.spIndex = binSpList.length-1;
+            } else if (self.spIndex > binSpList.length-1) {
+                self.spIndex = 0;
+            }
+            self.pic1.display(binSpList[self.spIndex]);
+            self.pic2.display(binSpList[self.spIndex]);
+        });
+
         this.bagTouch();
     },
     changIndex: function(arg) {
@@ -105,10 +118,11 @@ var binShaderLayer = cc.Layer.extend({
             this.nowIndex = 0;
         }
         this.pic2.removeFromParent();
-        this.pic2 = new ShaderSprite(res.wen4, binList[this.nowIndex][0], binList[this.nowIndex][1]).to(this).p(V.w*3/4, V.h/2+this.addY);
+        this.pic2 = new binShaderSprite(binSpList[this.spIndex], binList[this.nowIndex][0], binList[this.nowIndex][1], this).to(this).p(V.w*3/4, V.h/2+this.addY);
         this.pic2.setScale(0.5);
 
-        this.desc.setString( (this.nowIndex+1)+" : "+binList[this.nowIndex][2] )
+        this.desc.setString( (this.nowIndex+1)+" : "+binList[this.nowIndex][2] );
+        this.bagTouch();
     },
     bagTouch:function () {
         var self = this;
@@ -146,32 +160,32 @@ var binShaderLayer = cc.Layer.extend({
     },
     addSlider:function () {
         var slider = new cc.ControlSlider(res.cocosui_sliderTrack, res.cocosui_sliderProgress, res.cocosui_sliderThumb).anchor(0.5, 0.5);
-
         slider.setMinimumValue(0.0); // Sets the min value of range
         slider.setMaximumValue(1.0); // Sets the max value of range
         slider.x = 450;
-        slider.y = 175;
+        slider.y = 165;
+        slider.setValue(this.slider1Value);
         slider.addTargetWithActionForControlEvents(this, this.onSlider1, cc.CONTROL_EVENT_VALUECHANGED);
         this.addChild(slider);
-        slider.setValue(this.slider1Value);
-
+        
+        
         var slider2 = new cc.ControlSlider(res.cocosui_sliderTrack, res.cocosui_sliderProgress, res.cocosui_sliderThumb).anchor(0.5, 0.5);
         slider2.setMinimumValue(0.0); // Sets the min value of range
         slider2.setMaximumValue(1.0); // Sets the max value of range
         slider2.x = V.w-450;
-        slider2.y = 175;
+        slider2.y = 165;
+        slider2.setValue(this.slider2Value);
         slider2.addTargetWithActionForControlEvents(this, this.onSlider2, cc.CONTROL_EVENT_VALUECHANGED);
         this.addChild(slider2);
-        slider2.setValue(this.slider2Value);
     },
     onSlider1:function (sender, controlEvent) {
         this.slider1Value = sender.getValue();
-        console.log("this.slider1Value", this.slider1Value);
+        // console.log("this.slider1Value", this.slider1Value);
         this.updateState();
     },
     onSlider2:function (sender, controlEvent) {
         this.slider2Value = sender.getValue();
-        console.log("this.slider2Value", this.slider2Value);
+        // console.log("this.slider2Value", this.slider2Value);
         this.updateState();
     },
 
