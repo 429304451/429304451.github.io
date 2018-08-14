@@ -82,8 +82,8 @@ cc.game.onStart = function(){
         cc.loader.loadJs(jsListFramework.concat(jsListGame), function() {
             // 预加载资源
             cc.LoaderScene.preload(g_resources, function () {
-                // cc.director.runScene(new BranchGrowth()); Try1_Scene simpleShaderScene hall_Scene binShaderScene
-                cc.director.runScene(new binShaderScene());
+                // cc.director.runScene(new BranchGrowth()); Try1_Scene simpleShaderScene hall_Scene binShaderScene outLineScene
+                cc.director.runScene(new hall_Scene());
                 // cc.director.runScene(new MEnter(10003, false));
             }, this);
         });

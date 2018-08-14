@@ -21,6 +21,7 @@ var res = {
 
     tree1: "res/img2/gameplay/magicball3.png",
     s_fire: "res/img2/gameplay/fire.png",
+    bar: "res/img2/bar.png",
     // cocosui
     cocosui_green_edit: "res/img2/cocosui/green_edit.png",
     cocosui_scrollviewbg: "res/img2/cocosui/scrollviewbg.png",

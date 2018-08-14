@@ -16,6 +16,7 @@ var jsListGame = [
     "src/app.js",
 
     "src/MainScene/hall.js", // 大厅入口
+    "src/MainScene/outLine.js",
 
     "src/Shaders/10002WenYu.js",
     "src/Shaders/ShaderCommon.js",
