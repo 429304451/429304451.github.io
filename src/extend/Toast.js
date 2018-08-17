@@ -33,6 +33,10 @@ var mlog = function () {
     node.runAction(action);
 };
 
+var trace = function () {
+    console.log(arguments);
+};
+
 // 入口函数 从这里进入分流
 var MLabel = cc.LabelTTF.extend({
     ctor: function (name, showName) {

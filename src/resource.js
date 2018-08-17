@@ -55,7 +55,7 @@ var res = {
     // gp
     gp_grossini: "res/img2/gpu/grossini.png",
 
-
+    json1: "res/csb/mMatch/match1_center.json",
 
 };
 

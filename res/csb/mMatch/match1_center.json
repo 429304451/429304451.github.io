@@ -1,0 +1,296 @@
+{
+  "ID": "7ed5aee6-0459-4b4a-b70f-da8ee89b80f8",
+  "Version": "3.10.0.0",
+  "Name": "match1_center",
+  "Content": {
+    "Content": {
+      "Animation": {
+        "Duration": 0,
+        "Speed": 1.0,
+        "Timelines": [],
+        "ctype": "TimelineActionData"
+      },
+      "AnimationList": [],
+      "ObjectData": {
+        "Tag": 5,
+        "Children": [
+          {
+            "FileData": {
+              "Type": "Normal",
+              "Path": "res/img2/desk/1.jpg",
+              "Plist": ""
+            },
+            "Scale9OriginX": 422,
+            "Scale9OriginY": 237,
+            "Scale9Width": 436,
+            "Scale9Height": 246,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -640.0,
+            "RightMargin": -640.0,
+            "TopMargin": -360.0,
+            "BottomMargin": -360.0,
+            "Tag": 7,
+            "ActionTag": 1185403664,
+            "Size": {
+              "X": 1280.0,
+              "Y": 720.0
+            },
+            "Name": "img_bag",
+            "ctype": "ImageViewObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "MatchVS Demo-Cocos",
+            "FontResource": {
+              "Type": "Default",
+              "Path": "",
+              "Plist": ""
+            },
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": 0.0,
+              "Y": 170.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -180.0,
+            "RightMargin": -180.0,
+            "TopMargin": -190.0,
+            "BottomMargin": 150.0,
+            "Tag": 6,
+            "ActionTag": 2103205695,
+            "Size": {
+              "X": 360.0,
+              "Y": 40.0
+            },
+            "Name": "title",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "GameId",
+            "FontResource": {
+              "Type": "Default",
+              "Path": "",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Right",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -300.0,
+              "Y": 60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -360.0,
+            "RightMargin": 240.0,
+            "TopMargin": -80.0,
+            "BottomMargin": 40.0,
+            "Tag": 9,
+            "ActionTag": -93354743,
+            "Size": {
+              "X": 120.0,
+              "Y": 40.0
+            },
+            "Name": "gameid_label",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "AppKey",
+            "FontResource": {
+              "Type": "Default",
+              "Path": "",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Right",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -300.0,
+              "Y": 0.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -360.0,
+            "RightMargin": 240.0,
+            "TopMargin": -20.0,
+            "BottomMargin": -20.0,
+            "Tag": 11,
+            "ActionTag": -1450220535,
+            "Size": {
+              "X": 120.0,
+              "Y": 40.0
+            },
+            "Name": "appkey_label",
+            "ctype": "TextObjectData"
+          },
+          {
+            "FontSize": 40,
+            "LabelText": "Secret",
+            "FontResource": {
+              "Type": "Default",
+              "Path": "",
+              "Plist": ""
+            },
+            "HorizontalAlignmentType": "HT_Right",
+            "OutlineColor": {
+              "G": 0,
+              "B": 0
+            },
+            "ShadowColor": {
+              "R": 110,
+              "G": 110,
+              "B": 110
+            },
+            "ShadowOffsetX": 2.0,
+            "ShadowOffsetY": -2.0,
+            "AnchorPoint": {
+              "ScaleX": 0.5,
+              "ScaleY": 0.5
+            },
+            "Position": {
+              "X": -300.0,
+              "Y": -60.0
+            },
+            "Scale": {
+              "ScaleX": 1.0,
+              "ScaleY": 1.0
+            },
+            "CColor": {},
+            "IconVisible": false,
+            "PrePosition": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "PreSize": {
+              "X": 0.0,
+              "Y": 0.0
+            },
+            "LeftMargin": -360.0,
+            "RightMargin": 240.0,
+            "TopMargin": 40.0,
+            "BottomMargin": -80.0,
+            "Tag": 12,
+            "ActionTag": -1751567558,
+            "Size": {
+              "X": 120.0,
+              "Y": 40.0
+            },
+            "Name": "secret_label",
+            "ctype": "TextObjectData"
+          }
+        ],
+        "Size": {
+          "X": 0.0,
+          "Y": 0.0
+        },
+        "Name": "Node",
+        "ctype": "SingleNodeObjectData"
+      },
+      "UsedResources": [
+        "../../img2/desk/1.jpg"
+      ],
+      "ctype": "GameFileData"
+    }
+  },
+  "Type": "Node"
+}

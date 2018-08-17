@@ -15,8 +15,8 @@ float time = 0.5;
 float Scale = 1.0;
 
 
-// #define outlineSize 10.*sin(2.*CC_Time[1])
-float outlineSize = 10.*sin(2.*CC_Time[1]);
+// #define outlineSize 10.*sin(2.*CC_Time[0])
+float outlineSize = 10.*sin(2.*CC_Time[0]);
 //CC_Time[1]; 
 // 10.*sin(2.*CC_Time[1]);
 // 描边宽度，直接以像素为单位会有分辨率不同大小不同的问题，所以就用比例吧

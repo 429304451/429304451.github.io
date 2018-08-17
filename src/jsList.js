@@ -7,6 +7,7 @@ var jsListFramework = [
 
     "src/extend/Toast.js",
     "src/extend/Utils.js",
+    "src/extend/ui.js",
 
     "src/extend/core/ClientKernel.js",
 ];
@@ -17,6 +18,7 @@ var jsListGame = [
 
     "src/MainScene/hall.js", // 大厅入口
     "src/MainScene/outLine.js",
+    "src/mMatchvsDemo/mMatchvsDemo.js",
 
     "src/Shaders/10002WenYu.js",
     "src/Shaders/ShaderCommon.js",
