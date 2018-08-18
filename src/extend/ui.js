@@ -16,5 +16,25 @@ ui.printCsError = function(path) {
 };
 	
 ui.loadCS = function(path) {
-	return ccs.load(path, "");
+	// return ccs.load(path, "");
+	return ccs.load(path, "").node;
+};
+
+ui.setNodeMap = function(node, tbl) {
+	if (node == null) {
+		return;
+	};
+	var childCount = node.getChildrenCount();
+	if (childCount < 1) {
+		return;
+	};
+	var children = node.getChildren();
+
+	for (var i = 0; i < childCount; i++) {
+		if (typeof children == "object") {
+			tbl[children[i]._name] = children[i]
+			ui.setNodeMap(children[i], tbl)
+		}
+	};
+
 };

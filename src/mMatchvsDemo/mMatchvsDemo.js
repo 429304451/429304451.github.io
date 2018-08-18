@@ -1,4 +1,9 @@
 
+// var GLB = require("Glb");
+// var engine = require("MatchvsEngine");
+// var response = require("MatchvsDemoResponse");
+// var msg = require("MatvhsMessage");
+var userInfo;
 
 var mMatchvsDemoLayer = cc.Layer.extend({
     sprite:null,
@@ -6,44 +11,61 @@ var mMatchvsDemoLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super();
-        // var mainscene = ccs.load(res.wangzha, "");
-        // this.addChild(mainscene.node);
+        console.log(this.on);
+        // console.log("MatchvsEngine");
+        // console.log(MatchvsEngine);
+        
         this.match1_center = ui.loadCS(res.json1); //.to(this);
-        this.match1_center.node.to(this).p(WIN_center);
-        // this.match1_center.node.img_bag.setScale(0.5);
-        var img_bag = this.match1_center.node.getChildByName("img_bag");
-        img_bag.setScale(0.5);
-        // uiutils.lua
+        this.match1_center.to(this).p(WIN_center);
+        ui.setNodeMap(this.match1_center, this);
+        // 背景适配全屏
+        this.img_bag.ctFull();
 
-        // this.addChild(this.match1_center.node);
+        // 创建输入框
+        var sp1 = new cc.Scale9Sprite("res/img2/playerInfo/_0008_wenben.png");
+        account1 = new cc.EditBox(cc.size(550, 50), sp1);
+        account1.setPlaceHolder("201766");
+        account1.setFontSize(30);
+        account1.setPlaceholderFontSize(32);
+        account1.setFontColor(cc.color.BLACK);
+        account1.setPosition(45, 0);
+        this.Node_1.addChild(account1);
+        this.account1 = account1;
+        //         201766
+        // 320c7a564a324e79b0c8e12696f5ec64
+        // 2f1176c2a2a84132bfead71dcb33b4d4
+        var sp2 = new cc.Scale9Sprite("res/img2/playerInfo/_0008_wenben.png");
+        account2 = new cc.EditBox(cc.size(550, 50), sp2);
+        account2.setPlaceHolder("********************************");
+        account2.setFontSize(30);
+        account2.setPlaceholderFontSize(32);
+        account2.setFontColor(cc.color.BLACK);
+        account2.setPosition(45, 0);
+        this.Node_2.addChild(account2);
+        this.account2 = account2;
 
-        // var mainscene = ccs.load(res.json1, "");
-        // this.addChild(mainscene.node);
+        var sp3 = new cc.Scale9Sprite("res/img2/playerInfo/_0008_wenben.png");
+        account3 = new cc.EditBox(cc.size(550, 50), sp3);
+        account3.setPlaceHolder("********************************");
+        account3.setFontSize(30);
+        account3.setPlaceholderFontSize(32);
+        account3.setFontColor(cc.color.BLACK);
+        account3.setPosition(45, 0);
+        this.Node_3.addChild(account3);
+        this.account3 = account3;
 
 
-        // 添加背景图
-        // this.bg = new cc.Sprite(cRes.bg1).to(this).pp();
-        // this.bg.setScaleY(_gm.bgScaleH);
-        // /////////////////////////////
-        // // 3. add your codes below...
-        // // add a label shows "Hello World"
-        // this.count = 10
-        // var self = this;
-        // // create and initialize a label
-        // var helloLabel = new cc.LabelTTF("mMatchvsDemoLayer", "Arial", 38).to(this, 5).pp(0.5, 0.7);
-        // // add "HelloWorld" splash screen"
-        // this.sprite = new cc.Sprite(res.HelloWorld_png).to(this).pp();
-
-        // this.sprite.quickBt(function () {
-        //     // mlog("mMatchvsDemoLayer")
-            
-        //     self.count = self.count + 1
-        //     mlog("self.count", self.count)
-        //     helloLabel.setString(self.count)
-        // });
+        var self = this;
+        this.initEvent(self);
+        
 
         return true;
     },
+    initEvent:function (self) {
+        MatchvsDemoResponse.prototype.init(self);
+        // this.node.on(matchvs_msg.MATCHVS_RE_CONNECT,this.onEvent,this);
+    },
+
 });
 
 var mMatchvsDemoScene = cc.Scene.extend({

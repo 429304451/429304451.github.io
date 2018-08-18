@@ -56,8 +56,20 @@ var res = {
     gp_grossini: "res/img2/gpu/grossini.png",
 
     json1: "res/csb/mMatch/match1_center.json",
-
 };
+
+var jsListDump = [
+    "res/csb/grabredlords_game/wangzha.json",
+    "res/csb/mMatch/match1_center.json",
+    "res/img2/btn/gouxuan.png",
+    "res/img2/btn/xuanzhongkuang.png",
+    "res/img2/desk/1.jpg",
+    "res/img2/font/MSYH.TTF",
+    "res/img2/playerInfo/_0008_wenben.png",
+    "res/img2/puchengBomb/btn/green.png",
+    "res/img2/puchengBomb/btn/lan.png",
+    "res/img2/puchengBomb/btn/red.png",
+];
 
 var g_resources = [];
 for (var i in res) {
@@ -66,5 +78,7 @@ for (var i in res) {
 for (var i in cRes) {
     g_resources.push(cRes[i]);
 }
-
+for (var i in jsListDump) {
+    g_resources.push(jsListDump[i]);
+}
 

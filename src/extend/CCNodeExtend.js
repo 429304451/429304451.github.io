@@ -38,11 +38,16 @@ cc.Node.prototype.getSceneOrLayerInParent = function() {
 	return null;
 };
 
-cc.Node.prototype.fullScreen = function(father, zorder, tag) {
+cc.Node.prototype.fullScreen = function() {
 	var winSize = cc.director.getWinSize();
 	var size = this.getContentSize();
 	this.setScaleX(winSize.width/size.width);
 	this.setScaleY(winSize.height/size.height);
+	return this;
+};
+
+cc.Node.prototype.ctFull = function() {
+	this.setContentSize(WIN_SIZE);
 	return this;
 };
 

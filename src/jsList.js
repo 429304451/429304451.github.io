@@ -18,6 +18,11 @@ var jsListGame = [
 
     "src/MainScene/hall.js", // 大厅入口
     "src/MainScene/outLine.js",
+    // matchvs
+    "src/mMatchvsDemo/frame/matchvs.all.js",
+    "src/mMatchvsDemo/frame/Glb.js",
+    "src/mMatchvsDemo/frame/Matchvs.js",
+    "src/mMatchvsDemo/frame/MatchvsDemoResponse.js",
     "src/mMatchvsDemo/mMatchvsDemo.js",
 
     "src/Shaders/10002WenYu.js",
