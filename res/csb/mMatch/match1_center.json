@@ -616,10 +616,10 @@
                   "X": 0.0,
                   "Y": 0.0
                 },
-                "LeftMargin": -236.0,
-                "RightMargin": 72.0,
-                "TopMargin": -24.5,
-                "BottomMargin": -24.5,
+                "LeftMargin": -235.0,
+                "RightMargin": 73.0,
+                "TopMargin": -22.5,
+                "BottomMargin": -22.5,
                 "Tag": 17,
                 "ActionTag": 1711471327,
                 "Size": {
@@ -744,7 +744,7 @@
               "X": 171.0,
               "Y": 84.0
             },
-            "Name": "Sprite_1",
+            "Name": "btn_sure",
             "ctype": "SpriteObjectData"
           }
         ],

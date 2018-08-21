@@ -7,6 +7,7 @@ var jsListFramework = [
 
     "src/extend/Toast.js",
     "src/extend/Utils.js",
+    "src/extend/util.js",
     "src/extend/ui.js",
 
     "src/extend/core/ClientKernel.js",
@@ -22,8 +23,11 @@ var jsListGame = [
     "src/mMatchvsDemo/frame/matchvs.all.js",
     "src/mMatchvsDemo/frame/Glb.js",
     "src/mMatchvsDemo/frame/Matchvs.js",
+    "src/mMatchvsDemo/frame/MatchvsEngine.js",
     "src/mMatchvsDemo/frame/MatchvsDemoResponse.js",
     "src/mMatchvsDemo/mMatchvsDemo.js",
+    // 同拼牛牛
+    "src/SingleGame/tongbiniuniu/tongbiniuniu.js",
 
     "src/Shaders/10002WenYu.js",
     "src/Shaders/ShaderCommon.js",

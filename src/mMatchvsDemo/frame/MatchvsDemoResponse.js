@@ -59,12 +59,12 @@ MatchvsDemoResponse.prototype.registerUserResponse = function (userInfo) {
     if (userInfo.id != undefined) {
         console.log("注册成功");
         if (userInfo.name != "") {
-            GLB.name = userInfo.name;
+            Glb.name = userInfo.name;
         } else {
-            GLB.name = userInfo.id;
+            Glb.name = userInfo.id;
         }
-        GLB.avatar = userInfo.avatar;
-        GLB.userID = userInfo.id;
+        Glb.avatar = userInfo.avatar;
+        Glb.userID = userInfo.id;
         this.context.node.emit(matchvs_msg.MATCHVS_REGISTER_USER, {msg: userInfo,});
     } else {
         console.log("注册失败"+userInfo.status);

@@ -83,7 +83,8 @@ cc.game.onStart = function(){
             // 预加载资源
             cc.LoaderScene.preload(g_resources, function () {
                 // cc.director.runScene(new BranchGrowth()); Try1_Scene simpleShaderScene hall_Scene binShaderScene outLineScene
-                cc.director.runScene(new mMatchvsDemoScene());
+                // mMatchvsDemoScene
+                cc.director.runScene(new tongbiniuniuScene());
                 // cc.director.runScene(new MEnter(10003, false));
             }, this);
         });

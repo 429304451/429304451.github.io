@@ -11,7 +11,7 @@ var mMatchvsDemoLayer = cc.Layer.extend({
         //////////////////////////////
         // 1. super init first
         this._super();
-        console.log(this.on);
+        console.log(this.addEventListener);
         // console.log("MatchvsEngine");
         // console.log(MatchvsEngine);
         
@@ -57,6 +57,11 @@ var mMatchvsDemoLayer = cc.Layer.extend({
 
         var self = this;
         this.initEvent(self);
+
+        this.btn_sure.quickBt(function () {
+            mlog("sure");
+            MatchvsDemoEngine.prototype.init(Glb.channel,Glb.platform,Glb.gameID);
+        });
         
 
         return true;

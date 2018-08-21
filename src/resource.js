@@ -59,18 +59,27 @@ var res = {
 };
 
 var jsListDump = [
+    "Default/Button_Disable.png",
     "res/csb/grabredlords_game/wangzha.json",
     "res/csb/mMatch/match1_center.json",
+    "res/csb/SingleGame/tongbiniuniu.json",
     "res/img2/btn/gouxuan.png",
     "res/img2/btn/xuanzhongkuang.png",
     "res/img2/desk/1.jpg",
     "res/img2/font/MSYH.TTF",
+    "res/img2/niuniu/bg.jpg",
+    "res/img2/niuniu/cell_frame.png",
+    "res/img2/niuniu/clock.png",
+    "res/img2/niuniu/face_frame_h.png",
+    "res/img2/niuniu/face_frame_v.png",
+    "res/img2/niuniu/rule_h.png",
+    "res/img2/niuniu/rule_n.png",
     "res/img2/playerInfo/_0008_wenben.png",
+    "res/img2/playerInfo/_0022_diban.png",
     "res/img2/puchengBomb/btn/green.png",
     "res/img2/puchengBomb/btn/lan.png",
     "res/img2/puchengBomb/btn/red.png",
 ];
-
 var g_resources = [];
 for (var i in res) {
     g_resources.push(res[i]);
